@@ -1,0 +1,6 @@
+{
+  "name": "MilesAre",
+  "description": "Anonymous confession and social secret sharing platform with real-time community interactions and privacy.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

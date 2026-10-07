@@ -1,0 +1,115 @@
+{
+  "version": "1.0",
+  "entities": {
+    "User": {
+      "collection": "users",
+      "fields": {
+        "userId": { "type": "string", "required": true },
+        "anonymousHandle": { "type": "string", "required": true },
+        "anonymousAvatar": { "type": "string", "required": true },
+        "anonymousColor": { "type": "string", "required": true },
+        "bio": { "type": "string", "required": false },
+        "themePreference": { "type": "string", "required": false },
+        "createdAt": { "type": "timestamp", "required": true },
+        "updatedAt": { "type": "timestamp", "required": true }
+      }
+    },
+    "Post": {
+      "collection": "posts",
+      "fields": {
+        "postId": { "type": "string", "required": true },
+        "authorId": { "type": "string", "required": true },
+        "anonymousId": { "type": "string", "required": true },
+        "anonymousAvatar": { "type": "string", "required": true },
+        "anonymousColor": { "type": "string", "required": true },
+        "content": { "type": "string", "required": true },
+        "category": { "type": "string", "required": true },
+        "postType": { "type": "string", "required": true },
+        "pastelTheme": { "type": "string", "required": true },
+        "contentWarning": { "type": "string", "required": false },
+        "commentsEnabled": { "type": "boolean", "required": true },
+        "reactionsEnabled": { "type": "boolean", "required": true },
+        "mediaUrl": { "type": "string", "required": false },
+        "audioDurationSec": { "type": "number", "required": false },
+        "reactionCount": { "type": "number", "required": true },
+        "commentCount": { "type": "number", "required": true },
+        "saveCount": { "type": "number", "required": true },
+        "shareCount": { "type": "number", "required": true },
+        "isArchived": { "type": "boolean", "required": true },
+        "isDeleted": { "type": "boolean", "required": true },
+        "reactions": { "type": "map", "required": false },
+        "createdAt": { "type": "timestamp", "required": true },
+        "updatedAt": { "type": "timestamp", "required": true }
+      }
+    },
+    "Comment": {
+      "collection": "posts/{postId}/comments",
+      "fields": {
+        "commentId": { "type": "string", "required": true },
+        "postId": { "type": "string", "required": true },
+        "authorId": { "type": "string", "required": true },
+        "anonymousId": { "type": "string", "required": true },
+        "anonymousAvatar": { "type": "string", "required": true },
+        "anonymousColor": { "type": "string", "required": true },
+        "content": { "type": "string", "required": true },
+        "parentId": { "type": "string", "required": false },
+        "likeCount": { "type": "number", "required": true },
+        "createdAt": { "type": "timestamp", "required": true }
+      }
+    },
+    "Reaction": {
+      "collection": "reactions",
+      "fields": {
+        "reactionId": { "type": "string", "required": true },
+        "postId": { "type": "string", "required": true },
+        "userId": { "type": "string", "required": true },
+        "reactionType": { "type": "string", "required": true },
+        "createdAt": { "type": "timestamp", "required": true }
+      }
+    },
+    "SavedPost": {
+      "collection": "saved_posts",
+      "fields": {
+        "saveId": { "type": "string", "required": true },
+        "userId": { "type": "string", "required": true },
+        "postId": { "type": "string", "required": true },
+        "savedAt": { "type": "timestamp", "required": true }
+      }
+    },
+    "Report": {
+      "collection": "reports",
+      "fields": {
+        "reportId": { "type": "string", "required": true },
+        "reporterId": { "type": "string", "required": true },
+        "targetType": { "type": "string", "required": true },
+        "targetId": { "type": "string", "required": true },
+        "reason": { "type": "string", "required": true },
+        "notes": { "type": "string", "required": false },
+        "createdAt": { "type": "timestamp", "required": true }
+      }
+    },
+    "Block": {
+      "collection": "blocks",
+      "fields": {
+        "blockId": { "type": "string", "required": true },
+        "userId": { "type": "string", "required": true },
+        "blockedAnonymousId": { "type": "string", "required": true },
+        "createdAt": { "type": "timestamp", "required": true }
+      }
+    },
+    "Notification": {
+      "collection": "notifications",
+      "fields": {
+        "notificationId": { "type": "string", "required": true },
+        "recipientId": { "type": "string", "required": true },
+        "senderAnonymousId": { "type": "string", "required": true },
+        "type": { "type": "string", "required": true },
+        "postId": { "type": "string", "required": false },
+        "title": { "type": "string", "required": true },
+        "message": { "type": "string", "required": true },
+        "read": { "type": "boolean", "required": true },
+        "createdAt": { "type": "timestamp", "required": true }
+      }
+    }
+  }
+}
